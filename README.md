@@ -1,2 +1,2 @@
 # MeepSuite
-meep-made malware, tools, etc.
+the public meep-made malware, tools, etc.
