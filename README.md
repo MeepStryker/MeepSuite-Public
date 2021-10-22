@@ -4,7 +4,6 @@ This houses the meeptools designated for use in RvB competitions and are not dev
 OSINT tools pending legal questions before development. 
 
 ### Latest Updates:
-- meepcut (stealing clipboard data, PoC only)
 - C2 (detects different kinds of meepware & creates unique loot folders)
 - Keyloggers (basic & plus, advanced in development)
 ### Categories
