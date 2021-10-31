@@ -16,11 +16,6 @@ OSINT tools pending legal questions before development.
 - meepshell
   - executes received commands & sends output to c2
 
-## Droppers
-- meepcut (Proof of Concept only)
-  - uses powershell to create a shortcut activated by Ctrl+C/Ctrl+V
-  - activation will use Get-Clipboard and send data back to server
-
 ## Keyloggers
 - meeplogger
   - stores keys to a local log file
