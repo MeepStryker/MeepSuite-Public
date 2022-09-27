@@ -1,3 +1,5 @@
+Private-public repo merge pending
+
 # MeepSuite
 meep-made malware, tools, etc. 
 This houses the meeptools designated for use in RvB competitions and are not developed to the higher standard for real-life use as tools the private repo. 
